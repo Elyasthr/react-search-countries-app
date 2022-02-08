@@ -1,0 +1,29 @@
+.card-country{
+  background-color: var(--Elements);
+  width: 264px;
+  height: 336px;
+  border-radius: 5px;
+  box-shadow: var(--Shadow);
+  margin: 0 55px 40px 55px;
+
+  img{
+    width: 264px;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .card-infos{
+    margin: 24px 0 0 24px;
+
+    h3{
+      margin-bottom: 16px;
+    }
+
+    li{
+      margin-bottom: 8px;
+    }
+  }
+
+}
