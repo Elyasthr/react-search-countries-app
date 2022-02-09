@@ -2,11 +2,11 @@ import React from 'react';
 import SearchBar from './Searchbar';
 import SearchRegion from './SearchRegion';
 
-const Search = () => {
+const Search = ({onChange}) => {
   return (
     <div>
       <SearchBar />
-      <SearchRegion /> 
+      <SearchRegion onChange={onChange}/> 
     </div>
   );
 };

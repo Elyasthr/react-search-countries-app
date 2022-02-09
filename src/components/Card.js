@@ -12,9 +12,9 @@ const Card = ({country}) => {
       <div className='card-infos'>
         <h3>{country.name}</h3>
         <ul>
-          <li>Population: {numberFormat(country.population)}</li>
-          <li>Region: {country.region}</li>
-          <li>Capital: {country.capital}</li>
+          <li><span>Population: </span>{numberFormat(country.population)}</li>
+          <li><span>Region: </span>{country.region}</li>
+          <li><span>Capital: </span>{country.capital}</li>
         </ul>
       </div>
     </li>

@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
-import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 
 
-const SearchRegion = () => {
+const SearchRegion = ({onChange}) => {
   const {theme} = useContext(ThemeContext);
-
   const colourStyles = {
     control: () => ({ 
       display: "flex",
@@ -67,13 +65,21 @@ const SearchRegion = () => {
   };
 
   const options = [
-    { value: 'africa', label: 'Africa'},
-    { value: 'america', label: 'America'},
-    { value: 'asia', label: 'Asia'},
-    { value: 'europe', label: 'Europe'},
-    { value: 'oceania', label: 'Oceania'}
+    { value: 'Africa', label: 'Africa'},
+    { value: 'America', label: 'America'},
+    { value: 'Asia', label: 'Asia'},
+    { value: 'Europe', label: 'Europe'},
+    { value: 'Oceania', label: 'Oceania'}
   ]
 
+  const handleChange = (selectedOption)=>{
+    if(selectedOption){
+      onChange(selectedOption.value)
+    }
+    else{
+      onChange(null)
+    } 
+  }
   return (
     <>
       <Select
@@ -82,6 +88,7 @@ const SearchRegion = () => {
         isSearchable={false}
         options={options}
         placeholder="Filter by Region"
+        onChange={handleChange}
       />
     </>
   );
