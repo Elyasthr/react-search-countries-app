@@ -1,15 +1,20 @@
-import React, {useState} from 'react';
+import React, {createContext, useState} from 'react';
 import Home from './pages/Home';
 
-
+export const ThemeContext = createContext();
 
 const App = () => {
   const [theme,setTheme] = useState('light');
+  const changeTheme = (val)=>{
+    setTheme(val)
+  }
   
   return (
-    <div data-theme={theme} className="root">
-      <Home onClick={val => setTheme(val)} theme={theme}/>
-    </div>
+    <ThemeContext.Provider value={{theme,changeTheme}}>
+      <Home />
+    </ThemeContext.Provider>
+      
+    
   );
 };
 

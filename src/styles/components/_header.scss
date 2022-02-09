@@ -1,0 +1,34 @@
+.header{
+  height: 80px;
+  padding: 0 16px;
+  background-color: var(--Elements);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--Shadow-3);
+
+  h1{
+    font-weight: $bold;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .switcher{
+    display: flex;
+
+    h2{
+      font-weight: $regular;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    svg{
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      fill: white; 
+      stroke: var(--Stroke);
+    }
+    
+  }
+}

@@ -1,0 +1,35 @@
+.searchbar{
+  display: flex;
+  align-items: center;
+  margin: 24px 16px 0 16px;
+  padding: 0 32px;
+  width: 343px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: var(--Elements);
+  box-shadow: var(--Shadow-2);
+
+  svg{
+    width: 18px;
+    height: 18px;
+    margin-right: 26px;
+    fill: var(--Fill);
+  }
+
+  .searchbar-input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--Elements);
+    color: var(--Text);
+    &::placeholder{
+      color: var(--Text-2);
+      border: none;
+      }
+    &:focus{
+      outline:none!important;
+    }
+  }
+}
+

@@ -36,6 +36,8 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - React Hook
 - Axios - Promise based HTTP client
+- React Context
+- React Select
 - Node Sass
 - Mobile-first workflow
 
