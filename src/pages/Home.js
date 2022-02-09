@@ -12,6 +12,7 @@ const Home = () => {
   const [filterCountriesArray,setFilterCountriesArray] = useState([]);
   const [choiceRegion,setChoiceRegion] = useState(null);
   const [choiceCountry,setChoiceCountry] = useState(null);
+  const [exist,setExist] = useState(false);
   
   const handleChange = (val)=>{
     setChoiceRegion(val);
@@ -36,21 +37,38 @@ const Home = () => {
 
     const filterCountries = ()=>{
       if(choiceRegion){
-        console.log(choiceRegion)
         const sortRegionArray = countriesArray.filter((country)=>country.region === choiceRegion)
         if(choiceCountry){
-          console.log('test1')
+          const existCountry = sortRegionArray.some((country)=>country.name === choiceCountry)
+          if(existCountry){
+            const filterChoiceArray = sortRegionArray.filter((country)=>country.name === choiceCountry)
+            setFilterCountriesArray(filterChoiceArray)
+            setExist(true)
+          }
+          else{
+            setExist(false)
+          }
         }
         else{
           setFilterCountriesArray(sortRegionArray)
+          setExist(true)
         }
       }
       else{
         if(choiceCountry){
-          console.log('test2')
+          const existCountry = countriesArray.some((country)=>country.name === choiceCountry)
+          if(existCountry){
+            const filterChoiceArray = countriesArray.filter((country)=>country.name === choiceCountry)
+            setFilterCountriesArray(filterChoiceArray)
+            setExist(true)
+          }
+          else{
+            setExist(false)
+          }
         }
         else{
           setFilterCountriesArray(countriesArray)
+          setExist(true)
         }
       }
       
@@ -65,13 +83,18 @@ const Home = () => {
       <div className="container">
           <Header />
           <Search onChange={handleChange} onChanger={secondHandleChange}/>
-          <ul>
-            {
-              filterCountriesArray.map((country) => (
-                <Card country={country} key={country.name} />
-              ))
-            }
-          </ul>
+          {
+            exist 
+            ? <ul>
+                {
+                  filterCountriesArray.map((country) => (
+                    <Card country={country} key={country.name} />
+                  ))
+                }
+              </ul>
+            : <div className='card-country card-country-not-found'>Country Not Exist</div>
+          }
+          
       </div>
     </div>
   );
