@@ -11,9 +11,14 @@ const Home = () => {
   const [countriesArray,setCountriesArray] = useState([]); 
   const [filterCountriesArray,setFilterCountriesArray] = useState([]);
   const [choiceRegion,setChoiceRegion] = useState(null);
+  const [choiceCountry,setChoiceCountry] = useState(null);
   
   const handleChange = (val)=>{
     setChoiceRegion(val);
+  }
+
+  const secondHandleChange = (val)=>{
+    setChoiceCountry(val)
   }
 
   useEffect(()=>{
@@ -31,25 +36,35 @@ const Home = () => {
 
     const filterCountries = ()=>{
       if(choiceRegion){
+        console.log(choiceRegion)
         const sortRegionArray = countriesArray.filter((country)=>country.region === choiceRegion)
-        setFilterCountriesArray(sortRegionArray)
+        if(choiceCountry){
+          console.log('test1')
+        }
+        else{
+          setFilterCountriesArray(sortRegionArray)
+        }
       }
       else{
-        console.log("i want all")
-        setFilterCountriesArray(countriesArray)
+        if(choiceCountry){
+          console.log('test2')
+        }
+        else{
+          setFilterCountriesArray(countriesArray)
+        }
       }
       
       
     };
     filterCountries();
 
-  },[notPlayed,countriesArray,choiceRegion])
+  },[notPlayed,countriesArray,choiceRegion,choiceCountry])
 
   return (
     <div data-theme={theme} className="root">
       <div className="container">
           <Header />
-          <Search onChange={handleChange}/>
+          <Search onChange={handleChange} onChanger={secondHandleChange}/>
           <ul>
             {
               filterCountriesArray.map((country) => (
