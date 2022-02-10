@@ -11,7 +11,7 @@ const App = () => {
   const changeTheme = (val)=>{
     setTheme(val)
   }
-  
+    
   return (
     <ThemeContext.Provider value={{theme,changeTheme}}>
       <BrowserRouter>

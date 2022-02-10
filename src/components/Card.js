@@ -6,8 +6,9 @@ export const numberFormat = (popnum) => {
 }
 
 const Card = ({country}) => {
+  
   return (
-    <NavLink end to='country' state={{country}} >
+    <NavLink end to='country' style={{ color: 'inherit', textDecoration: 'inherit'}} state={{country}} >
       <li className='card-country'>
         <img src={country.flag} alt="flag"/>
         <div className='card-infos card-infos-country'>
