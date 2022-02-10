@@ -2,8 +2,12 @@ import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import Search from '../components/Search.js/Search';
 import Card from '../components/Card';
+import {  useLocation } from 'react-router-dom';
 
 const Home = () => {
+  const location = useLocation();
+  const play= location.state;
+  console.log(play)
   const [notPlayed,setNotPlayed] = useState(true);
   const [countriesArray,setCountriesArray] = useState([]); 
   const [filterCountriesArray,setFilterCountriesArray] = useState([]);
