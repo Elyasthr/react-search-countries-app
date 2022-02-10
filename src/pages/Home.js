@@ -1,6 +1,5 @@
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
-import Header from '../components/Header';
 import Search from '../components/Search.js/Search';
 import Card from '../components/Card';
 
@@ -78,7 +77,6 @@ const Home = () => {
 
   return (
         <>
-          <Header />
           <Search onChange={handleChange} onChanger={secondHandleChange}/>
           {
             exist 

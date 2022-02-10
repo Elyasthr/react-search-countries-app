@@ -1,11 +1,17 @@
-.header{
-  height: 80px;
-  padding: 0 16px;
-  background-color: var(--Elements);
+header{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: var(--Elements);
   box-shadow: var(--Shadow-3);
+
+  .header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 16px;
+    width: 375px;
+  }
 
   h1{
     font-weight: $bold;
