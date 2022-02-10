@@ -1,12 +1,10 @@
-import React, {useContext, useEffect,useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
 import Search from '../components/Search.js/Search';
 import Card from '../components/Card';
-import { ThemeContext } from '../App';
 
 const Home = () => {
-  const  {theme}  = useContext(ThemeContext);
   const [notPlayed,setNotPlayed] = useState(true);
   const [countriesArray,setCountriesArray] = useState([]); 
   const [filterCountriesArray,setFilterCountriesArray] = useState([]);
@@ -79,8 +77,7 @@ const Home = () => {
   },[notPlayed,countriesArray,choiceRegion,choiceCountry])
 
   return (
-    <div data-theme={theme} className="root">
-      <div className="container">
+        <>
           <Header />
           <Search onChange={handleChange} onChanger={secondHandleChange}/>
           {
@@ -94,10 +91,9 @@ const Home = () => {
               </ul>
             : <div className='card-country card-country-not-found'>Country Not Exist</div>
           }
-          
-      </div>
-    </div>
-  );
+        
+        </>  
+  )
 };
 
 export default Home;
