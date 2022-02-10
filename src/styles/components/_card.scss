@@ -16,18 +16,6 @@
 
   .card-infos{
     margin: 24px 0 0 24px;
-
-    h3{
-      margin-bottom: 16px;
-    }
-
-    li{
-      margin-bottom: 8px;
-    }
-
-    span{
-      font-weight: $regular;
-    }
   }
 
 }
@@ -40,4 +28,18 @@
   font-weight: $regular;
   color: #f22613;
   border:1px solid #f22613;
+}
+
+.card-infos-country{
+  h3{
+    margin-bottom: 16px;
+  }
+
+  li{
+    margin-bottom: 8px;
+  }
+
+  span{
+    font-weight: $regular;
+  }
 }

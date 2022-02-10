@@ -10,7 +10,7 @@ const Card = ({country}) => {
     <NavLink end to='country' state={{country}} >
       <li className='card-country'>
         <img src={country.flag} alt="flag"/>
-        <div className='card-infos'>
+        <div className='card-infos card-infos-country'>
           <h3>{country.name}</h3>
           <ul>
             <li><span>Population: </span>{numberFormat(country.population)}</li>
