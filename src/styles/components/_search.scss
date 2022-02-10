@@ -35,6 +35,9 @@
   .search-button{
     border: none;
     background-color: var(--Elements);
+    &:focus{
+      outline:none!important;
+    }
   }
 }
 

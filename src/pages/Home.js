@@ -39,9 +39,9 @@ const Home = () => {
       if(choiceRegion){
         const sortRegionArray = countriesArray.filter((country)=>country.region === choiceRegion)
         if(choiceCountry){
-          const existCountry = sortRegionArray.some((country)=>country.name === choiceCountry)
+          const existCountry = sortRegionArray.some((country)=>country.name.toLowerCase() === choiceCountry.toLowerCase())
           if(existCountry){
-            const filterChoiceArray = sortRegionArray.filter((country)=>country.name === choiceCountry)
+            const filterChoiceArray = sortRegionArray.filter((country)=>country.name.toLowerCase() === choiceCountry.toLowerCase())
             setFilterCountriesArray(filterChoiceArray)
             setExist(true)
           }
@@ -56,9 +56,9 @@ const Home = () => {
       }
       else{
         if(choiceCountry){
-          const existCountry = countriesArray.some((country)=>country.name === choiceCountry)
+          const existCountry = countriesArray.some((country)=>country.name.toLowerCase() === choiceCountry.toLowerCase())
           if(existCountry){
-            const filterChoiceArray = countriesArray.filter((country)=>country.name === choiceCountry)
+            const filterChoiceArray = countriesArray.filter((country)=>country.name.toLowerCase() === choiceCountry.toLowerCase())
             setFilterCountriesArray(filterChoiceArray)
             setExist(true)
           }
