@@ -1,10 +1,11 @@
 .card-country{
   background-color: var(--Elements);
   width: 264px;
-  height: 336px;
+  min-height: 290px;
   border-radius: 5px;
   box-shadow: var(--Shadow);
   margin: 0 55px 40px 55px;
+  padding-bottom: 46px;
 
   img{
     width: 264px;

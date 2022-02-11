@@ -15,6 +15,7 @@ const Country = () => {
   }
 
   useEffect(()=>{
+    window.scrollTo(0, 0);
     if(notPlayed){
       axios.get(`https://restcountries.com/v2/alpha?codes=${getCountryBorders}`)
       .then(res => setCountryBorders(res.data))
@@ -25,8 +26,7 @@ const Country = () => {
 
   return (
     <>
-    {/* repasser propre page dacceuil pour pas recaharger ? */}
-    <NavLink end to="/" state={{play: false}}>
+    <NavLink end to="/">
       <button className='back-button'>
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd" d="M5.81802 3.6967L6.87868 4.75736L3.3785 8.25754H16.7428L16.7428 9.74246H3.3785L6.87868 13.2426L5.81802 14.3033L0.514719 9L5.81802 3.6967Z"/>
@@ -60,7 +60,7 @@ const Country = () => {
             { country.borders.length
                 ? countryBorders 
                   ? countryBorders.map((country)=>(
-                      <NavLink end to='' style={{ color: 'inherit', textDecoration: 'inherit'}} state={{country}}>
+                      <NavLink end to='' style={{ color: 'inherit', textDecoration: 'inherit'}} state={{country}} key={country.name}>
                         <li key={country.name} onClick={onClick}>{country.name}</li>
                       </NavLink>
                     ))

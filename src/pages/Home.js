@@ -2,28 +2,37 @@ import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import Search from '../components/Search.js/Search';
 import Card from '../components/Card';
-import {  useLocation } from 'react-router-dom';
 
 const Home = () => {
-  const location = useLocation();
-  const play= location.state;
-  console.log(play)
+  
   const [notPlayed,setNotPlayed] = useState(true);
   const [countriesArray,setCountriesArray] = useState([]); 
   const [filterCountriesArray,setFilterCountriesArray] = useState([]);
   const [choiceRegion,setChoiceRegion] = useState(null);
   const [choiceCountry,setChoiceCountry] = useState(null);
   const [exist,setExist] = useState(false);
-  
+  //const screenee = false
   const handleChange = (val)=>{
     setChoiceRegion(val);
   }
+  // useEffect(()=>{console.log(window.screen)
+  // console.log(window.screenTop)
+  // console.log(window.screenX)})
+  
 
   const secondHandleChange = (val)=>{
     setChoiceCountry(val)
   }
 
+  const goTop = () => {
+    window.scroll({
+      top:0,
+      behavior: 'smooth'
+    });
+  }
+
   useEffect(()=>{
+    window.scrollTo(0, 0);
     if(notPlayed){
       axios.get('https://restcountries.com/v2/all?fields=name,population,region,capital,flag,subregion,nativeName,topLevelDomain,currencies,languages,borders,alpha3Code')
       .then((res) => {
@@ -93,7 +102,7 @@ const Home = () => {
               </ul>
             : <div className='card-country card-country-not-found'>Country Not Exist</div>
           }
-        
+          <button className={false ? 'top-button top-button-display' : 'top-button'} onClick={goTop}>^</button>
         </>  
   )
 };

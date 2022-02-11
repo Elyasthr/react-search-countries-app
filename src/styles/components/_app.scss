@@ -16,3 +16,23 @@
   margin: auto;
   padding-bottom: 32px;
 }
+
+.top-button{
+  opacity: 60%;
+  position: fixed;
+  bottom: 40px;
+  right: 15px;
+  width: 30px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: $light;
+  background-color: var(--Elements);
+  color: var(--Text);
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+}
+
+.top-button-display{
+  display: none;
+}
