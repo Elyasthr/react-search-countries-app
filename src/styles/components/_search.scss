@@ -9,6 +9,10 @@
   background-color: var(--Elements);
   box-shadow: var(--Shadow-2);
 
+  @include media-min('desktop'){
+    margin:40px 0 32px 0;
+  }
+
   svg{
     width: 18px;
     height: 18px;

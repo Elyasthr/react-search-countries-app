@@ -1,7 +1,7 @@
 .card-country{
   background-color: var(--Elements);
   width: 264px;
-  min-height: 290px;
+  min-height: 330px;
   border-radius: 5px;
   box-shadow: var(--Shadow);
   margin: 0 55px 40px 55px;
@@ -19,6 +19,25 @@
     margin: 24px 0 0 24px;
   }
 
+  @include media-min("desktop"){
+    margin: 0 0 75px 0 ;
+  } 
+}
+
+@include media-min("desktop"){
+  .searchbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }  
+
+  .countries-display{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
 }
 
 .card-country-not-found{

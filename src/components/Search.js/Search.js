@@ -4,7 +4,7 @@ import SearchRegion from './SearchRegion';
 
 const Search = ({onChange,onChanger}) => {
   return (
-    <div>
+    <div className='searchbar-container'>
       <SearchBar onChanger={onChanger} />
       <SearchRegion onChange={onChange}/> 
     </div>

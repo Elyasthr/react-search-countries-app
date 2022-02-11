@@ -93,7 +93,7 @@ const Home = () => {
           <Search onChange={handleChange} onChanger={secondHandleChange}/>
           {
             exist 
-            ? <ul>
+            ? <ul className='countries-display'>
                 {
                   filterCountriesArray.map((country) => (
                     <Card country={country} key={country.name} />

@@ -15,6 +15,9 @@
   min-height: 100vh;
   margin: auto;
   padding-bottom: 32px;
+  @include media-min("desktop"){
+    width: 1280px;
+  }
 }
 
 .top-button{
@@ -23,7 +26,7 @@
   bottom: 40px;
   right: 15px;
   width: 30px;
-  height: 40px;
+  height: 35px;
   font-size: 20px;
   font-weight: $light;
   background-color: var(--Elements);

@@ -11,30 +11,52 @@ header{
     height: 80px;
     padding: 0 16px;
     width: 375px;
-  }
 
-  h1{
-    font-weight: $bold;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .switcher{
-    display: flex;
-
-    h2{
-      font-weight: $regular;
-      font-size: 12px;
-      line-height: 16px;
+    h1{
+      font-weight: $bold;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  
+    .switcher{
+      display: flex;
+  
+      h2{
+        font-weight: $regular;
+        font-size: 12px;
+        line-height: 16px;
+      }
+  
+      svg{
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        fill: white; 
+        stroke: var(--Stroke);
+      }
+      
     }
 
-    svg{
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-      fill: white; 
-      stroke: var(--Stroke);
+    @include media-min("desktop"){
+      width: 100%;
+      padding: 0 80px;
+      h1{
+        font-size: 24px;
+        line-height: 33px;
+        }
+      .switcher{
+        h2{
+          font-size: 16px;
+          line-height: 22px;
+        }
+        svg{
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
-    
+
   }
+
+  
 }
