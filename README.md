@@ -52,4 +52,5 @@ Users should be able to:
 - Use Redux or localStorage to avoid multiple fetch request
 - Custome link page to access directly with url
 - Display countries based on size screen to optimize performance (like infinite scroll)
+- Display country in real time typing
 

@@ -38,36 +38,38 @@ const Country = () => {
         <img src={country.flag} alt="flag"/>
         <div className="card-infos-country">
           <h3>{country.name}</h3>
-          
-          <ul>
-            <li><span>Native Name: </span>{country.nativeName}</li>
-            <li><span>Population: </span>{numberFormat(country.population)}</li>
-            <li><span>Region: </span>{country.region}</li>
-            <li><span>Sub Region: </span>{country.subregion}</li>
-            <li><span>Capital: </span>{country.capital}</li>
-          </ul>
+          <div className='card-infos-country-ul'>
+            <ul>
+              <li><span>Native Name: </span>{country.nativeName}</li>
+              <li><span>Population: </span>{numberFormat(country.population)}</li>
+              <li><span>Region: </span>{country.region}</li>
+              <li><span>Sub Region: </span>{country.subregion}</li>
+              <li><span>Capital: </span>{country.capital}</li>
+            </ul>
 
-          <ul>
-            <li><span>Top Level Domain: </span>{country.topLevelDomain.map((dom)=>dom)}</li>
-            <li><span>Currencies: </span>{country.currencies.map((curr)=>curr.name)}</li>
-            <li><span>Languages: </span>{country.languages.map((lang)=>lang.name +" ")}</li>
-          </ul>
+            <ul>
+              <li><span>Top Level Domain: </span>{country.topLevelDomain.map((dom)=>dom)}</li>
+              <li><span>Currencies: </span>{country.currencies.map((curr)=>curr.name)}</li>
+              <li><span>Languages: </span>{country.languages.map((lang)=>lang.name +" ")}</li>
+            </ul>
+          </div>
 
-          
-          <h2>Border Countries</h2>
-          <ul className='ul-border'>
-            
-            { country.borders.length
-                ? countryBorders 
-                  ? countryBorders.map((country)=>(
-                      <NavLink end to='' style={{ color: 'inherit', textDecoration: 'inherit'}} state={{country}} key={country.name}>
-                        <li key={country.name} onClick={onClick}>{country.name}</li>
-                      </NavLink>
-                    ))
-                  : <li>Chargement...</li>
-                : <li>No Borders</li>
-            }
-          </ul>
+          <div className="card-infos-country-borders">
+            <h2>Border Countries: </h2>
+            <ul className='ul-border'>
+              
+              { country.borders.length
+                  ? countryBorders 
+                    ? countryBorders.map((country)=>(
+                        <NavLink end to='' style={{ color: 'inherit', textDecoration: 'inherit'}} state={{country}} key={country.name}>
+                          <li key={country.name} onClick={onClick}>{country.name}</li>
+                        </NavLink>
+                      ))
+                    : <li>Chargement...</li>
+                  : <li>No Borders</li>
+              }
+            </ul>
+          </div>
       </div>
     </div>
     </>
